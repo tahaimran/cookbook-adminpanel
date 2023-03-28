@@ -2,7 +2,17 @@ import React from "react";
 import { Paper, Button ,Typography} from "@mui/material";
 import "./cardcomp.css";
 import suggestionImg from '../../../Images/suggestionImg.jpg'
+import { recipe } from "./AddRecipeComp/recipe";
+import { useNavigate } from "react-router-dom";
+
 function Cardcomp() {
+
+  let history = useNavigate();
+
+  const RecipCall = () => {
+    history("/addRecipe");
+  }
+
   return (
     <div className="cardCompMain">
       <Paper elevation={24} className="main-paper">
@@ -12,7 +22,7 @@ function Cardcomp() {
         />
         <div className="bottom-paper ">
             <Typography variant="h4">Add New Reciepe</Typography>
-          <Button  size="medium" variant="contained">Add</Button>
+          <Button  size="medium" variant="contained" onClick={RecipCall}>Add</Button>
         </div>
       </Paper>
       <Paper elevation={24} className="main-paper">

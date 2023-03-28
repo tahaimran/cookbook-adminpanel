@@ -1,0 +1,14 @@
+.maindiv {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.inputdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
