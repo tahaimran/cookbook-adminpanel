@@ -3,9 +3,9 @@ import AppRouter from './Configuration/Router';
 
 function App() {
   return (
-    <div className='mainDiv'>
+    <>
       <AppRouter />
-    </div>
+    </>
   );
 }
 

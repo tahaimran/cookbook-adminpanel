@@ -21,7 +21,9 @@ export default function Login() {
   const handlePassChange = (event) => {
     setcheckpassword(event.target.value);
   };
+
   let history = useNavigate();
+  
   const Clicked = () => {
     if (checkusername === username && checkpassword === password) {
       history("/home");
