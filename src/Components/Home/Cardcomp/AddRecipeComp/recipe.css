@@ -1,13 +1,16 @@
-.maindiv {
-    border: 1px solid black;
+.mainBox {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 800px;
+    align-items: start;
+    width: 800px;
+    margin: 10px auto;
+    padding: 15px;
+    
 }
 
-.inputdiv {
-    display: flex;
-    flex-direction: column;
-}
+
 
 label {
     font-weight: bold;

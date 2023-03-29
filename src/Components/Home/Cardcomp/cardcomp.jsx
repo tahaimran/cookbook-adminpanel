@@ -3,7 +3,7 @@ import { Paper, Button ,Typography} from "@mui/material";
 import "./cardcomp.css";
 import suggestionImg from '../../../Images/suggestionImg.jpg'
 import { recipe } from "./AddRecipeComp/recipe";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Cardcomp() {
 
@@ -42,7 +42,7 @@ function Cardcomp() {
         />
         <div className="bottom-paper">
             <Typography variant="h4">Suggestions</Typography>
-          <Button  size="medium" variant="contained">Submit</Button>
+         <Link to="/submit"><Button  size="medium" variant="contained">Submit</Button></Link> 
         </div>
       </Paper>
     </div>

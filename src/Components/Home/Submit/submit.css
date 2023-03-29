@@ -1,0 +1,10 @@
+.submitBox{
+    height: 800px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid black;
+}
