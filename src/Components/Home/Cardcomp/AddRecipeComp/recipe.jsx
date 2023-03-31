@@ -8,29 +8,50 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Key } from "@mui/icons-material";
+
+
+
 
 function Recipe() {
 
 // Ingredients Adding 
+
   const [ing, setIng] = useState([]);
+  const [quan, setQuan] = useState([]);
+
   const addIng = () => {
     const IngValue = [...ing, []];
+    const QuanValue = [...quan, []];
+
     setIng(IngValue);
+    setQuan(QuanValue);
   };
+
   const handleIngChange = (onChangeValue, i) => {
     const inputData = [...ing];
     inputData[i] = onChangeValue.target.value;
+    console.log(inputData);
     setIng(inputData);
   };
-  const handleIngDelete = (i) => {
-    const deleteIng = [...ing];
-    deleteIng.splice(i, 1);
-    setIng(deleteIng);
+
+  const handleQuanChange = (onChangeValue, i) => {
+    const inputData = [...quan];
+    inputData[i] = onChangeValue.target.value;
+    console.log(inputData);
+    setQuan(inputData);
   }
 
+  const handleIngDelete = (i) => {
+    const deleteIng = [...ing];
+    const deleteQuan = [...quan];
 
+    deleteIng.splice(i, 1);
+    deleteQuan.splice(i, 1);
 
+    setIng(deleteIng);
+    setQuan(deleteQuan);
+  }
+  
   return (
     <>
       <SideBar />
@@ -71,17 +92,31 @@ function Recipe() {
             Add Ingredients
           </Button>
           <br />
+          <div className="ing-container">
           {ing.map((data, i) => {
+
+            const {Ingredient, Quantity} = data;
+
             return (
               <Box sx={{marginBottom:"10px"}}>
                 <TextField
                   required
                   id={i}
-                  value={data}
+                  value={Ingredient}
                   label="Enter Ingredients"
                   variant="outlined"
                   onChange={(e) => handleIngChange(e, i)}
                 />
+
+                <TextField
+                  required
+                  id={i}
+                  value={Quantity}
+                  label="Quantity"
+                  variant="outlined"
+                  onChange={(e) =>  handleQuanChange(e, i)}
+                />
+
                 <Button variant="contained" sx={{marginLeft:"10px" , marginTop: "10px" }} onClick={() => handleIngDelete(i)}>
                   X
                 </Button>
@@ -89,6 +124,8 @@ function Recipe() {
               </Box>
             );
           })}
+          </div>
+          
         </Box>
 
         <Box>
