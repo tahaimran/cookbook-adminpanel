@@ -1,0 +1,28 @@
+name: Cook Book Admin Panel
+
+on:
+
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+            node-version: 16
+
+      - name: Build React App
+        run: |
+          npm install # Install Dependencies
+          CI=false npm run build # CI=false to ignore warnings
+      - name: Installing Surge
+        run: npm install -g  surge
+
+      - name: deploying using Surge
+        run : surge ./build  https://cookadmin.surge.sh/ --token adf39d4e30955febf5573a1e06b75ada
