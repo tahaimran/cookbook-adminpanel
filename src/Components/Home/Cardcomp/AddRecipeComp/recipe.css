@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 800px;
     align-items: start;
     width: 800px;
     margin: 10px auto;
@@ -10,7 +9,9 @@
     
 }
 
-
+.mainBox >*{
+    margin: 20px 0px;
+}
 
 label {
     font-weight: bold;

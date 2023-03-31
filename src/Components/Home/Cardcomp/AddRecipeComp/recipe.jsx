@@ -3,13 +3,34 @@ import TextField from "@mui/material/TextField";
 import "../AddRecipeComp/recipe.css";
 import SideBar from "../../../SideBar/sidebar";
 import { Button, Paper, Typography } from "@mui/material";
-
+import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Key } from "@mui/icons-material";
 
-export const recipe = () => {
+function Recipe() {
+
+// Ingredients Adding 
+  const [ing, setIng] = useState([]);
+  const addIng = () => {
+    const IngValue = [...ing, []];
+    setIng(IngValue);
+  };
+  const handleIngChange = (onChangeValue, i) => {
+    const inputData = [...ing];
+    inputData[i] = onChangeValue.target.value;
+    setIng(inputData);
+  };
+  const handleIngDelete = (i) => {
+    const deleteIng = [...ing];
+    deleteIng.splice(i, 1);
+    setIng(deleteIng);
+  }
+
+
+
   return (
     <>
       <SideBar />
@@ -25,12 +46,12 @@ export const recipe = () => {
           />
         </Box>
         <Box>
-          <FormControl sx={{width : "300px"}}>
+          <FormControl sx={{ width: "300px" }}>
             <InputLabel id="demo-simple-select-label">Category</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value=""
+              // value=""
               label="Category"
               onChange={(e) => console.log(e.target.value)}
             >
@@ -41,10 +62,35 @@ export const recipe = () => {
               <MenuItem value="dessert">Dessert</MenuItem>
               <MenuItem value="baking">Baking</MenuItem>
               <MenuItem value="fast food">Fast food</MenuItem>
-
             </Select>
           </FormControl>
         </Box>
+
+        <Box>
+          <Button variant="contained" sx={{marginBottom : "10px"}} onClick={() => addIng()}>
+            Add Ingredients
+          </Button>
+          <br />
+          {ing.map((data, i) => {
+            return (
+              <Box sx={{marginBottom:"10px"}}>
+                <TextField
+                  required
+                  id={i}
+                  value={data}
+                  label="Enter Ingredients"
+                  variant="outlined"
+                  onChange={(e) => handleIngChange(e, i)}
+                />
+                <Button variant="contained" sx={{marginLeft:"10px" , marginTop: "10px" }} onClick={() => handleIngDelete(i)}>
+                  X
+                </Button>
+                <br />
+              </Box>
+            );
+          })}
+        </Box>
+
         <Box>
           <TextField
             sx={{ width: "500px" }}
@@ -57,9 +103,13 @@ export const recipe = () => {
           />
         </Box>
         <Box>
-          <Button sx={{width : "180px",height : "50px"}} variant="contained">Submit</Button>
+          <Button sx={{ width: "180px", height: "50px" }} variant="contained">
+            Submit
+          </Button>
         </Box>
       </Paper>
     </>
   );
-};
+}
+
+export default Recipe;
