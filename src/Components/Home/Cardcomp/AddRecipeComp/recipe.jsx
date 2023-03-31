@@ -109,6 +109,7 @@ function Recipe() {
                 />
 
                 <TextField
+                sx={{marginLeft : "10px"}}
                   required
                   id={i}
                   value={Quantity}
