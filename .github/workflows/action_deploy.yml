@@ -25,4 +25,4 @@ jobs:
         run: npm install -g  surge
 
       - name: deploying using Surge
-        run : surge ./build  https://cookadmin.surge.sh/ --token adf39d4e30955febf5573a1e06b75ada
+        run : surge ./build  https://cookadmin.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
