@@ -8,16 +8,17 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
-
-
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../../../Configuration/firebase";
 
 function Recipe() {
-
-// Ingredients Adding 
+  // Ingredients Adding
 
   const [ing, setIng] = useState([]);
   const [quan, setQuan] = useState([]);
+  const [recName, setRecName] = useState("");
+  const [category, setCategory] = useState("");
+  const [making, setMaking] = useState("");
 
   const addIng = () => {
     const IngValue = [...ing, []];
@@ -30,16 +31,14 @@ function Recipe() {
   const handleIngChange = (onChangeValue, i) => {
     const inputData = [...ing];
     inputData[i] = onChangeValue.target.value;
-    console.log(inputData);
     setIng(inputData);
   };
 
   const handleQuanChange = (onChangeValue, i) => {
     const inputData = [...quan];
     inputData[i] = onChangeValue.target.value;
-    console.log(inputData);
     setQuan(inputData);
-  }
+  };
 
   const handleIngDelete = (i) => {
     const deleteIng = [...ing];
@@ -50,8 +49,26 @@ function Recipe() {
 
     setIng(deleteIng);
     setQuan(deleteQuan);
-  }
-  
+  };
+
+  const recCollectionRef = collection(db, "categories");
+  const createRecipe = async () => {
+    await addDoc(recCollectionRef, {
+      RecipeName: recName,
+      Category: category,
+      Making: making,
+      Ingredient: ing,
+      Quantity: quan,
+    });
+
+    alert("Data Has Been Added");
+    setRecName("");
+    setCategory("");
+    setMaking("");
+    setIng([]);
+    setQuan([]);
+  };
+
   return (
     <>
       <SideBar />
@@ -63,18 +80,20 @@ function Recipe() {
             id="outlined-basic"
             label="Recipe Name"
             variant="outlined"
-            onChange={(e) => console.log(e.target.value)}
+            value={recName}
+            onChange={(e) => setRecName(e.target.value)}
           />
         </Box>
         <Box>
           <FormControl sx={{ width: "300px" }}>
             <InputLabel id="demo-simple-select-label">Category</InputLabel>
             <Select
+            required
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              // value=""
+              value={category}
               label="Category"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e) => setCategory(e.target.value)}
             >
               <MenuItem value="break fast">Break fast</MenuItem>
               <MenuItem value="lunch">Lunch</MenuItem>
@@ -88,45 +107,51 @@ function Recipe() {
         </Box>
 
         <Box>
-          <Button variant="contained" sx={{marginBottom : "10px"}} onClick={() => addIng()}>
+          <Button
+            variant="contained"
+            sx={{ marginBottom: "10px" }}
+            onClick={() => addIng()}
+          >
             Add Ingredients
           </Button>
           <br />
           <div className="ing-container">
-          {ing.map((data, i) => {
+            {ing.map((data, i) => {
+              const { Ingredient, Quantity } = data;
 
-            const {Ingredient, Quantity} = data;
+              return (
+                <Box sx={{ marginBottom: "10px" }}>
+                  <TextField
+                    required
+                    id={i}
+                    value={Ingredient}
+                    label="Enter Ingredients"
+                    variant="outlined"
+                    onChange={(e) => handleIngChange(e, i)}
+                  />
 
-            return (
-              <Box sx={{marginBottom:"10px"}}>
-                <TextField
-                  required
-                  id={i}
-                  value={Ingredient}
-                  label="Enter Ingredients"
-                  variant="outlined"
-                  onChange={(e) => handleIngChange(e, i)}
-                />
+                  <TextField
+                    sx={{ marginLeft: "10px" }}
+                    required
+                    id={i}
+                    value={Quantity}
+                    label="Quantity"
+                    variant="outlined"
+                    onChange={(e) => handleQuanChange(e, i)}
+                  />
 
-                <TextField
-                sx={{marginLeft : "10px"}}
-                  required
-                  id={i}
-                  value={Quantity}
-                  label="Quantity"
-                  variant="outlined"
-                  onChange={(e) =>  handleQuanChange(e, i)}
-                />
-
-                <Button variant="contained" sx={{marginLeft:"10px" , marginTop: "10px" }} onClick={() => handleIngDelete(i)}>
-                  X
-                </Button>
-                <br />
-              </Box>
-            );
-          })}
+                  <Button
+                    variant="contained"
+                    sx={{ marginLeft: "10px", marginTop: "10px" }}
+                    onClick={() => handleIngDelete(i)}
+                  >
+                    X
+                  </Button>
+                  <br />
+                </Box>
+              );
+            })}
           </div>
-          
         </Box>
 
         <Box>
@@ -136,12 +161,17 @@ function Recipe() {
             id="outlined-multiline-static"
             label="Enter The Making"
             multiline
+            value={making}
             rows={6}
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => setMaking(e.target.value)}
           />
         </Box>
         <Box>
-          <Button sx={{ width: "180px", height: "50px" }} variant="contained">
+          <Button
+            onClick={createRecipe}
+            sx={{ width: "180px", height: "50px" }}
+            variant="contained"
+          >
             Submit
           </Button>
         </Box>
