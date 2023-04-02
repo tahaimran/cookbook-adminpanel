@@ -10,6 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../../Configuration/firebase";
+import { uid } from "uid";
 
 function Recipe() {
   // Ingredients Adding
@@ -20,6 +21,10 @@ function Recipe() {
   const [category, setCategory] = useState("");
   const [making, setMaking] = useState("");
   const [link, setLink] = useState("");
+  const [imgLink, setImgLink] = useState("");
+
+  
+const recId = uid();
 
   const addIng = () => {
     const IngValue = [...ing, []];
@@ -54,7 +59,7 @@ function Recipe() {
 
   const HandleLink = (event) => {
     setLink(event.target.value);
-  } 
+  };
 
   const recCollectionRef = collection(db, "categories");
   const createRecipe = async () => {
@@ -64,9 +69,10 @@ function Recipe() {
       Making: making,
       Ingredient: ing,
       Quantity: quan,
-      Link: link,
+      VideoLink: link,
+      ImageLink: imgLink,
+      id: recId
     });
-
     alert("Data Has Been Added");
     setRecName("");
     setCategory("");
@@ -74,11 +80,15 @@ function Recipe() {
     setIng([]);
     setQuan([]);
     setLink("");
+    setImgLink("")
   };
+
+
 
   return (
     <>
       <SideBar />
+
       <Paper className="mainBox">
         <Typography variant="h2"> Add New Recipe</Typography>
         <Box>
@@ -95,7 +105,7 @@ function Recipe() {
           <FormControl sx={{ width: "300px" }}>
             <InputLabel id="demo-simple-select-label">Category</InputLabel>
             <Select
-            required
+              required
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={category}
@@ -172,18 +182,28 @@ function Recipe() {
             rows={6}
             onChange={(e) => setMaking(e.target.value)}
           />
-
         </Box>
         <Box>
-        <TextField
-              required
-              value={link}
-              label="Enter reference Link"
-              variant="outlined"
-              onChange={HandleLink}
-              sx={{width: "400px"}}
+          <TextField
+            required
+            value={link}
+            label="Enter reference Link"
+            variant="outlined"
+            onChange={HandleLink}
+            sx={{ width: "400px" }}
           />
         </Box>
+        <Box>
+          <TextField
+            required
+            value={imgLink}
+            label="Enter Image Link"
+            variant="outlined"
+            onChange={e => setImgLink(e.target.value)}
+            sx={{ width: "400px" }}
+          />
+        </Box>
+
         <Box>
           <Button
             onClick={createRecipe}
