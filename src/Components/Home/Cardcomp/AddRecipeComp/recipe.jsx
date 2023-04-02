@@ -19,6 +19,7 @@ function Recipe() {
   const [recName, setRecName] = useState("");
   const [category, setCategory] = useState("");
   const [making, setMaking] = useState("");
+  const [link, setLink] = useState("");
 
   const addIng = () => {
     const IngValue = [...ing, []];
@@ -51,6 +52,10 @@ function Recipe() {
     setQuan(deleteQuan);
   };
 
+  const HandleLink = (event) => {
+    setLink(event.target.value);
+  } 
+
   const recCollectionRef = collection(db, "categories");
   const createRecipe = async () => {
     await addDoc(recCollectionRef, {
@@ -59,6 +64,7 @@ function Recipe() {
       Making: making,
       Ingredient: ing,
       Quantity: quan,
+      Link: link,
     });
 
     alert("Data Has Been Added");
@@ -67,6 +73,7 @@ function Recipe() {
     setMaking("");
     setIng([]);
     setQuan([]);
+    setLink("");
   };
 
   return (
@@ -164,6 +171,17 @@ function Recipe() {
             value={making}
             rows={6}
             onChange={(e) => setMaking(e.target.value)}
+          />
+
+        </Box>
+        <Box>
+        <TextField
+              required
+              value={link}
+              label="Enter reference Link"
+              variant="outlined"
+              onChange={HandleLink}
+              sx={{width: "400px"}}
           />
         </Box>
         <Box>
