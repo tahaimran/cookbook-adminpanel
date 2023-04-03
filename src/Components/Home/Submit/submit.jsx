@@ -2,32 +2,69 @@ import { Button, Paper, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import SideBar from "../../SideBar/sidebar";
-import "./submit.css"
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../../Configuration/firebase";
+import "./submit.css";
+import { useState } from "react";
 function Submit() {
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Message, setMessage] = useState("");
+
+  const recCollectionRef = collection(db, "tickets");
+  const createSubmit = async () => {
+    await addDoc(recCollectionRef, {
+      Name: Name,
+      Email: Email,
+      Message: Message,
+    });
+    alert("Ticket Submitted");
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <>
       <SideBar />
       <Paper className="submitBox">
         <Box>
-            <Typography variant="h4">Feel Free To Share New Ideas.</Typography>
+          <Typography variant="h4">Feel Free To Share New Ideas.</Typography>
         </Box>
         <Box>
-          <TextField id="outlined-basic" label="Full Name" variant="outlined" />
+          <TextField
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+            id="outlined-basic"
+            label="Full Name"
+            variant="outlined"
+          />
         </Box>
         <Box>
-          <TextField id="outlined-basic" label="Email Address" variant="outlined" />
+          <TextField
+            value={Email}
+            onChange={(e) => setEmail(e.target.value)}
+            id="outlined-basic"
+            label="Email Address"
+            variant="outlined"
+          />
         </Box>
 
         <Box>
           <TextField
+            value={Message}
+            onChange={(e) => setMessage(e.target.value)}
             id="outlined-multiline-static"
             label="Suggestion"
             multiline
             rows={4}
-            sx={{width:"400px"}}
+            sx={{ width: "400px" }}
           />
         </Box>
-        <Box><Button variant="contained">Submit</Button></Box>
+        <Box>
+          <Button onClick={createSubmit} variant="contained">
+            Submit
+          </Button>
+        </Box>
       </Paper>
     </>
   );

@@ -32,7 +32,7 @@ function Cardcomp() {
         />
         <div className="bottom-paper">
             <Typography variant="h4">Categories</Typography>
-          <Button  size="medium" variant="contained">View All</Button>
+          <Link to='/category'><Button  size="medium" variant="contained">View All</Button></Link>
         </div>
       </Paper>
       <Paper elevation={24} className="main-paper">
