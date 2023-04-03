@@ -33,7 +33,9 @@ export default function SideBar() {
             </Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/category">Categories</Link>
+            <Link to="/category" className="sideText">
+              Categories
+            </Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/submit" className="sideText">

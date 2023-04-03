@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SideBar from "../../../SideBar/sidebar";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { db } from "../../../../Configuration/firebase";
+import { Button } from "@mui/material";
 
 function Category() {
   const [recipe, setRecipe] = useState([]);
@@ -34,7 +35,7 @@ function Category() {
               </ol>
               <p>{rec.Making}</p>
               <img src={rec.ImageLink} alt="" srcset="" />
-              {/* <button target="blank" src={rec.VideoLink}>Video Ref</button> */}
+              <a target="_blank" href={rec.VideoLink}><Button variant="outlined" >Video Ref</Button></a>
             </div>
           );
         })}
