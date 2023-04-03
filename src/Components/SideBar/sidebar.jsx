@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import './sidebar.css'
+import "./sidebar.css";
 export default function SideBar() {
   return (
     <Box sx={{ flexGrow: 1 }} className="sideBar">
@@ -24,23 +24,20 @@ export default function SideBar() {
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/home" className="sideText">
-            
               Home
             </Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/addRecipe" className="sideText">
-             
               Add New Recipe
             </Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Categories
+            <Link to="/category">Categories</Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/submit" className="sideText">
-             
-            Suggestions
+              Suggestions
             </Link>
           </Typography>
 
