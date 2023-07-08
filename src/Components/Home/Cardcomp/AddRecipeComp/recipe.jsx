@@ -112,13 +112,13 @@ const recId = uid();
               label="Category"
               onChange={(e) => setCategory(e.target.value)}
             >
-              <MenuItem value="break fast">Break fast</MenuItem>
-              <MenuItem value="lunch">Lunch</MenuItem>
-              <MenuItem value="appetizer">Appetizer</MenuItem>
-              <MenuItem value="dinner">Dinner</MenuItem>
-              <MenuItem value="dessert">Dessert</MenuItem>
-              <MenuItem value="baking">Baking</MenuItem>
-              <MenuItem value="fast food">Fast food</MenuItem>
+              <MenuItem value="Break Fast">Break fast</MenuItem>
+              <MenuItem value="Lunch">Lunch</MenuItem>
+              <MenuItem value="Appetizer">Appetizer</MenuItem>
+              <MenuItem value="Dinner">Dinner</MenuItem>
+              <MenuItem value="Dessert">Dessert</MenuItem>
+              <MenuItem value="Baking">Baking</MenuItem>
+              <MenuItem value="Fast Food">Fast food</MenuItem>
             </Select>
           </FormControl>
         </Box>

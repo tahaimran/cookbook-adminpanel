@@ -23,7 +23,7 @@ function Category() {
         <Typography variant="h2">Break Fast</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "break fast")
+            .filter((rec) => rec.Category === "Break Fast")
             .map((rec, i) => {
               return (
                 <Paper
@@ -65,7 +65,7 @@ function Category() {
         <Typography variant="h2">Lunch</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "lunch")
+            .filter((rec) => rec.Category === "Lunch")
             .map((rec, i) => {
               return (
                 <Paper
@@ -107,7 +107,7 @@ function Category() {
         <Typography variant="h2">Appetizer</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "appetizer")
+            .filter((rec) => rec.Category === "Appetizer")
             .map((rec, i) => {
               return (
                 <Paper
@@ -149,7 +149,7 @@ function Category() {
         <Typography variant="h2">Dinner</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "dinner")
+            .filter((rec) => rec.Category === "Dinner")
             .map((rec, i) => {
               return (
                 <Paper
@@ -191,7 +191,7 @@ function Category() {
         <Typography variant="h2">Dessert</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "dessert")
+            .filter((rec) => rec.Category === "Dessert")
             .map((rec, i) => {
               return (
                 <Paper
@@ -234,7 +234,7 @@ function Category() {
         <Typography variant="h2">Baking</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "baking")
+            .filter((rec) => rec.Category === "Baking")
             .map((rec, i) => {
               return (
                 <Paper
@@ -277,7 +277,7 @@ function Category() {
         <Typography variant="h2">Fast Food</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
-            .filter((rec) => rec.Category === "fast food")
+            .filter((rec) => rec.Category === "Fast Food")
             .map((rec, i) => {
               return (
                 <Paper
