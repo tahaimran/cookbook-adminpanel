@@ -1,21 +1,48 @@
+*body {
+    background-color: #ECE9FF;
+}
+
 .recCat {
     margin: auto;
     max-width: 1200px;
-    
+
 
 }
-.RecipeName{ 
+
+.categor {
+    color: #ffffff;
+    width: 20%;
+border-radius: 10px;
+   text-align: center;
+    font-size: 30px;
+    font-family: inter, Arial, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    line-height: 64px;
+    vertical-align: baseline;
+    letter-spacing: -1.12px;
+    word-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 4px;
+    background-color: #4C32B3;
+}
+
+.RecipeName {
     margin-top: 20px;
-    display: flex; 
+    display: flex;
     align-items: center;
-    height: 50px ;
+    height: 50px;
     max-width: 1200px;
-    
+
     background-color: #0C0129;
     color: #ffffff;
-    border-radius: 15px 15px 0px 0px ; 
+    border-radius: 15px 15px 0px 0px;
 }
-.RecipeName_number{
+
+.RecipeName_number {
     font-size: 20px;
     font-family: inter, Arial, sans-serif;
     font-weight: 600;
@@ -26,7 +53,8 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-.RecipeName_name{
+
+.RecipeName_name {
     font-size: 20px;
     font-family: inter, Arial, sans-serif;
     font-weight: 600;
@@ -35,35 +63,37 @@
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color:#4C32B3; ;
+    color: #4C32B3;
+    ;
     background-color: #ffffff;
-} 
+}
 
 .main {
     background-color: #0C0129;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     height: auto;
-    border-radius: 0px 0px 15px 15px 
+    border-radius: 0px 0px 15px 15px
 }
 
 
 .main_list {
+    margin-left: 30px;
     color: #ffffff;
-    align-self: flex-start ;
+    align-self: flex-start;
     margin-top: 30px;
 }
- 
-.main_list li{
 
+.main_list li {
+  
     font-size: 16px;
     font-family: inter, Arial, sans-serif;
     line-height: 1.1;
     margin-bottom: 10px;
     text-align: justify;
     font-weight: normal;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 .Box_img {
@@ -105,11 +135,11 @@
     font-size: 14px;
 
     font-family: inter, Arial, sans-serif;
-  
+
     color: #000000;
     font-weight: 500;
     text-align: justify;
-       text-decoration: none;
+    text-decoration: none;
 
 }
 
@@ -119,9 +149,24 @@
     gap: 10px;
 }
 
-.button_9 {
-    padding: 5px;
-    background-color: blue;
+.button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 
+    /* height: 70px; */
+    border-radius: 30px;
+    color: #ffffff;
+    border: none;
+    background-color: #6C47FF;
+    
+    font-size: 15px;
+    font-family: inter, Arial, sans-serif;
+    line-height: 1.1;
+
+    text-align: justify;
+    font-weight: 600;
+    text-decoration: none;
 
 }
