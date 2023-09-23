@@ -20,48 +20,68 @@ function Category() {
     <div>
       <SideBar />
       <Box className="recCat">
-        <Typography variant="h2">Break Fast</Typography>
-        <Box sx={{ height: "100px" }}>
+        <Typography variant="h4">Break Fast</Typography>
+        <Box  sx={{ height: "500px" }}>
           {recipe
             .filter((rec) => rec.Category === "Break Fast")
             .map((rec, i) => {
               return (
-                <Paper
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-around",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography variant="h5">{i}</Typography>
-                  <Typography variant="h4">{rec.RecipeName}</Typography>
-                  <ol>
-                    {rec.Ingredient.map((recs, i) => {
-                      return <li>{recs}</li>;
-                    })}
-                  </ol>
-                  <ol>
-                    {rec.Quantity.map((recs, i) => {
-                      return <li>{recs}</li>;
-                    })}
-                  </ol>
-                  <Box
-                    sx={{ width: "150px", height: "100px", overflow: "hidden" }}
+                <div >
+                  <div className="RecipeName" >
+                    <h2 className="RecipeName_number" >{i}</h2>
+                    <h2 className="RecipeName_name">{rec.RecipeName}</h2>
+                  </div>
+
+                  <div
+                    className="main"
+                  
                   >
-                    <Typography variant="p">{rec.Making}</Typography>
-                  </Box>
-                  <Box sx={{ width: "150px" }}>
-                    <img width="100%" src={rec.ImageLink} alt="" srcset="" />
-                  </Box>
-                  <Link target="_blank" to={rec.VideoLink}>
-                    <Button variant="outlined">Video Ref</Button>
-                  </Link>
-                </Paper>
+                    <ol className="main_list" >
+                      {rec.Ingredient.map((recs, i) => {
+                        return <li>{recs}</li>;
+                      })}
+                    </ol>
+                    <ol className="main_list"  >
+                      {rec.Quantity.map((recs, i) => {
+                        return <li>{recs}</li>;
+                      })}
+                    </ol>
+
+                    <div className="Box_2">
+                      <div className="Box_div_one"> 
+                        <Box
+                          sx={{
+                            width: "150px",
+                            height: "200px",
+                            overflow: "hidden",
+                          }}
+                        >
+                          <span className="text" variant="p">{rec.Making}</span>
+                        </Box>
+                        <Link to={rec.VideoLink}>
+                        <Button className="button_9">watch video </Button>
+                      </Link>
+                      
+                      </div>
+                      <div>
+                      <Box>
+                          <img
+                            className="Box_img"
+                            src={rec.ImageLink}
+                            alt=""
+                            srcset=""
+                          />
+                        </Box>
+                     
+                      </div>
+                    </div>
+                  </div>
+                </div>
               );
             })}
         </Box>
       </Box>
-      <Box className="recCat">
+      {/* <Box className="recCat">
         <Typography variant="h2">Lunch</Typography>
         <Box sx={{ height: "100px" }}>
           {recipe
@@ -314,7 +334,7 @@ function Category() {
               );
             })}
         </Box>
-      </Box>
+      </Box> */}
     </div>
   );
 }

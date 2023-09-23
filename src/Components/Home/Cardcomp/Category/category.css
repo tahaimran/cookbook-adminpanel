@@ -1,4 +1,127 @@
-.recCat{
+.recCat {
+    margin: auto;
+    max-width: 1200px;
+    
+
+}
+.RecipeName{ 
     margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex; 
+    align-items: center;
+    height: 50px ;
+    max-width: 1200px;
+    
+    background-color: #0C0129;
+    color: #ffffff;
+    border-radius: 15px 15px 0px 0px ; 
+}
+.RecipeName_number{
+    font-size: 20px;
+    font-family: inter, Arial, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-left: 10px;
+    background-color: #4C32B3;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.RecipeName_name{
+    font-size: 20px;
+    font-family: inter, Arial, sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:#4C32B3; ;
+    background-color: #ffffff;
+} 
+
+.main {
+    background-color: #0C0129;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    border-radius: 0px 0px 15px 15px 
+}
+
+
+.main_list {
+    color: #ffffff;
+    align-self: flex-start ;
+    margin-top: 30px;
+}
+ 
+.main_list li{
+
+    font-size: 16px;
+    font-family: inter, Arial, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-align: justify;
+    font-weight: normal;
+     text-decoration: none;
+}
+
+.Box_img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 50px;
+
+
+}
+
+
+.haeder_text {
+    font-size: 32px;
+    font-family: inter, Arial, sans-serif;
+    color: #525050;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
+    font-weight: normal;
+    text-decoration: none;
+    font-weight: 500px;
+}
+
+.Box_2 {
+    margin: 20px;
+    background-color: #ffffff;
+    height: inherit;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    gap: 5px
+}
+
+.text {
+    font-size: 14px;
+
+    font-family: inter, Arial, sans-serif;
+  
+    color: #000000;
+    font-weight: 500;
+    text-align: justify;
+       text-decoration: none;
+
+}
+
+.Box_div_one {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button_9 {
+    padding: 5px;
+    background-color: blue;
+
+
 }
