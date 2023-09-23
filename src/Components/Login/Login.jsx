@@ -34,7 +34,7 @@ export default function Login() {
   };
   return (
     <div className="loginmain">
-      <Card variant="outlined" className="mainDiv">
+      <Card className="mainDiv">
         <div className="av-div">
           <Avatar
             alt="Remy Sharp"
@@ -46,7 +46,7 @@ export default function Login() {
         <div className="us-div">
           <TextField
             id="outlined-basic"
-            label="UserName"
+            label="User Name"
             variant="outlined"
             className="userText"
             onChange={handleUserChange}
@@ -64,10 +64,10 @@ export default function Login() {
           />
         </div>
 
-        <div className="but-div">
-            <Button variant="contained" className="SubButton" onClick={Clicked}>
+        <div >
+            <button className="button_I" onClick={Clicked}>
               Login
-            </Button>
+            </button>
         </div>
       </Card>
     </div>
