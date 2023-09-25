@@ -5,9 +5,11 @@ import { db } from "../../../../Configuration/firebase";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./category.css";
+import SwitchTab from "../../../SwitchTab/SwitchTab";
 function Category() {
   const [recipe, setRecipe] = useState([]);
-  const [Loading, setLoading] = useState(null)
+  const [Loading, setLoading] = useState(false)
+  console.log("🚀 ~ file: category.jsx:12 ~ Category ~ Loading:", Loading)
   const cat = [
     "Break Fast",
     "Lunch",
@@ -17,25 +19,35 @@ function Category() {
     "Baking",
     "Fast Food",
   ];
+  const [filterCat, setfilterCat] = useState( "Break Fast")
+
   const recCollectionRef = collection(db, "categories");
   useEffect(() => {
+    
     const getRecipes = async () => {
       const data = await getDocs(recCollectionRef);
+      setLoading(true)
       setRecipe(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getRecipes();
   }, []);
+  const onTabChange = (tab) => {
+    setfilterCat(tab=== "BreakFast"?  "Break Fast": (tab === "FastFood" ?  "Fast Food":tab ) )
+  };
 
+
+  
   return (
     <div>
       <SideBar />
+      <SwitchTab className="SwitchTab" data={["BreakFast", "Lunch", "Appetizer", "Dinner", "Dessert", "Baking", "FastFood"]}  onTabChange={onTabChange}  />
       <div>
-        {cat.map((cat) => (
+        
           <Box className="recCat">
-          <h1 className="categor" variant="h4">{cat}</h1>
+        
           <Box  >
             {recipe
-              .filter((rec) => rec.Category === `${cat}`)
+              .filter((rec) => rec.Category === `${filterCat}`)
               .map((rec, i) => {
                 return (
                   <div >
@@ -93,7 +105,7 @@ function Category() {
               })}
           </Box>
         </Box>
-        ))}
+        
       </div>
      
     </div>

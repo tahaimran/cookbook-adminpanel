@@ -1,11 +1,13 @@
 import { Button, Paper, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import SideBar from "../../SideBar/sidebar";
+// import SideBar from "../../SideBar/sidebar";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../../Configuration/firebase";
-import "./submit.css";
+// import { db } from "../../../Configuration/firebase";
 import { useState } from "react";
+import "./submit.css";
+import SideBar from "../../../SideBar/sidebar";
+import { db } from "../../../../Configuration/firebase";
 function Submit() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -25,7 +27,7 @@ function Submit() {
   };
   return (
     <>
-      <SideBar />
+      <SideBar/>
       <Paper className="submitBox">
         <Box>
           <Typography variant="h4">Feel Free To Share New Ideas.</Typography>
