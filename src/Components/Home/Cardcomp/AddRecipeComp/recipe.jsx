@@ -82,15 +82,18 @@ const recId = uid();
     setLink("");
     setImgLink("")
   };
-
+s
 
 
   return (
-    <>
-      <SideBar />
+    <> 
+    <div className ="main">
 
+   
+      <SideBar />
+       
       <Paper className="mainBox">
-        <Typography variant="h2"> Add New Recipe</Typography>
+        <h2 variant="h2"> Add New Recipe</h2>
         <Box>
           <TextField
             required
@@ -104,7 +107,7 @@ const recId = uid();
         <Box>
           <FormControl sx={{ width: "300px" }}>
             <InputLabel id="demo-simple-select-label">Category</InputLabel>
-            <Select
+            <SelectP
               required
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -119,7 +122,7 @@ const recId = uid();
               <MenuItem value="Dessert">Dessert</MenuItem>
               <MenuItem value="Baking">Baking</MenuItem>
               <MenuItem value="Fast Food">Fast food</MenuItem>
-            </Select>
+            </SelectP>
           </FormControl>
         </Box>
 
@@ -214,6 +217,7 @@ const recId = uid();
           </Button>
         </Box>
       </Paper>
+      </div>
     </>
   );
 }
