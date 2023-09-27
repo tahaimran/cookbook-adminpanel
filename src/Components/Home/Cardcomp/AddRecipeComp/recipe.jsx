@@ -107,7 +107,7 @@ s
         <Box>
           <FormControl sx={{ width: "300px" }}>
             <InputLabel id="demo-simple-select-label">Category</InputLabel>
-            <SelectP
+            <Select
               required
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -122,7 +122,7 @@ s
               <MenuItem value="Dessert">Dessert</MenuItem>
               <MenuItem value="Baking">Baking</MenuItem>
               <MenuItem value="Fast Food">Fast food</MenuItem>
-            </SelectP>
+            </Select>
           </FormControl>
         </Box>
 
