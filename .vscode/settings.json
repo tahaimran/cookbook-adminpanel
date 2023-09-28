@@ -2,6 +2,7 @@
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: developer]",
     "editor.acceptSuggestionOnEnter": "on",
     "conventionalCommits.scopes": [
-        "categories"
+        "categories",
+        "addRecipe"
     ]
 }
