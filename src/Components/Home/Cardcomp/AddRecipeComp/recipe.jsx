@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import "../AddRecipeComp/recipe.css";
+import "./recipe.css";
 import SideBar from "../../../SideBar/sidebar";
 import { Button, Paper, Typography } from "@mui/material";
 import { useState } from "react";
@@ -86,14 +86,17 @@ const recId = uid();
 
 
   return (
-    <>
+    <> 
+  
+   
       <SideBar />
-
+       
       <Paper className="mainBox">
-        <Typography variant="h2"> Add New Recipe</Typography>
+        <h2 variant="h2">Add New Recipe</h2>
         <Box>
           <TextField
             required
+            size="small"
             id="outlined-basic"
             label="Recipe Name"
             variant="outlined"
@@ -105,6 +108,7 @@ const recId = uid();
           <FormControl sx={{ width: "300px" }}>
             <InputLabel id="demo-simple-select-label">Category</InputLabel>
             <Select
+              size="small"
               required
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -125,8 +129,8 @@ const recId = uid();
 
         <Box>
           <Button
-            variant="contained"
-            sx={{ marginBottom: "10px" }}
+            color="success"
+            variant="contained" size="medium"
             onClick={() => addIng()}
           >
             Add Ingredients
@@ -140,6 +144,7 @@ const recId = uid();
                 <Box sx={{ marginBottom: "10px" }}>
                   <TextField
                     required
+                    size="small"
                     id={i}
                     value={Ingredient}
                     label="Enter Ingredients"
@@ -151,15 +156,18 @@ const recId = uid();
                     sx={{ marginLeft: "10px" }}
                     required
                     id={i}
+                    size="small"
                     value={Quantity}
                     label="Quantity"
                     variant="outlined"
                     onChange={(e) => handleQuanChange(e, i)}
                   />
 
-                  <Button
+                  <Button 
                     variant="contained"
-                    sx={{ marginLeft: "10px", marginTop: "10px" }}
+                     size="medium"
+                    label="Quantity"
+                    color="success"
                     onClick={() => handleIngDelete(i)}
                   >
                     X
@@ -177,6 +185,7 @@ const recId = uid();
             required
             id="outlined-multiline-static"
             label="Enter The Making"
+            size="small"
             multiline
             value={making}
             rows={6}
@@ -189,12 +198,14 @@ const recId = uid();
             value={link}
             label="Enter reference Link"
             variant="outlined"
+            size="small"
             onChange={HandleLink}
             sx={{ width: "400px" }}
           />
         </Box>
         <Box>
           <TextField
+           size="small"
             required
             value={imgLink}
             label="Enter Image Link"
@@ -204,16 +215,17 @@ const recId = uid();
           />
         </Box>
 
-        <Box>
-          <Button
+         <div className="button_container">
+           <button
             onClick={createRecipe}
-            sx={{ width: "180px", height: "50px" }}
-            variant="contained"
-          >
+       
+            >
             Submit
-          </Button>
-        </Box>
+          </button>
+            </div>
+        
       </Paper>
+      
     </>
   );
 }

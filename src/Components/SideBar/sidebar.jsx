@@ -10,44 +10,41 @@ import { Link } from "react-router-dom";
 import "./sidebar.css";
 export default function SideBar() {
   return (
-    <Box sx={{ flexGrow: 1 }} className="sideBar">
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuItem />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+    <div className="sideBar">
+        <div className="sideBar_1">
+          <span className="sideText"> Cook Book Admin Panel</span>
+        </div>
+      <div className="sideBar_2">
+              
+          <span >
             <Link to="/home" className="sideText">
               Home
             </Link>
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          </span>
+          <span >
             <Link to="/addRecipe" className="sideText">
               Add New Recipe
             </Link>
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          </span>
+          <span >
             <Link to="/category" className="sideText">
               Categories
             </Link>
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          </span>
+          <span >
             <Link to="/submit" className="sideText">
               Suggestions
             </Link>
-          </Typography>
+          </span>
 
-          <Link to="/" className="btnLogin">
-            <Button color="inherit">Logout</Button>
+         
+      </div>
+      <div>
+      <Link to="/" className="sideTexts">
+            <span>Logout </span> 
           </Link>
-        </Toolbar>
-      </AppBar>
-    </Box>
+       
+      </div>
+    </div>
   );
 }

@@ -1,18 +1,28 @@
 .mainBox {
+  
+    padding: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: start;
-    width: 800px;
-    margin: 10px auto;
-    padding: 15px;
+    /* align-items: start; */
+    width:500px;
+    margin: auto;
+    /* smargin: 10px auto; */
+    /* box-shadow: 10px 5px 5px gay */
     
 }
 
 .mainBox >*{
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 label {
     font-weight: bold;
+}
+
+
+.button_container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
 }

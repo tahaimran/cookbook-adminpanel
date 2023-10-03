@@ -1,0 +1,70 @@
+.switchingTabs {
+  
+   width: 810px; 
+   margin: auto; 
+   max-width: 1200px;
+    
+}
+
+.tabItems {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    position: relative;
+    height: 34px;
+    background-color: #4C32B3;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.tabItem {
+    height: 100%;
+    
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    color: var(--black);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: color ease 0.3s;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    font-size: 20px;
+    font-family: inter, Arial, sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-left: 10px;
+    background-color: #4C32B3;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.active {
+    color: #4C32B3;
+    background-color: #fff;
+    border-radius:3px ;
+   
+}
+
+.movingBg {
+    font-size: 24px;
+    color: rgb(179, 102, 15);
+    font-weight: normal;
+    margin-left: 3px;
+    height: 30px;
+    width: 99px;
+    border-radius: 15px;
+    background-image: #000;
+    position: absolute;
+    left:0;
+   /* bottom: 1.1px; */
+    transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+}
