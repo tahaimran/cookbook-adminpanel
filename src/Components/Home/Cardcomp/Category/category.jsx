@@ -34,12 +34,12 @@ function Category() {
 
 
     const handleDeleteRecipe= async(deleteRecipeId)=>{
-      
+      const confirmDelete = window.confirm("Are you sure you want to delete this recipe?");
+      if (confirmDelete) {
       try {
         
         const recipeDocRef = doc(db, "categories", deleteRecipeId);
-        
-     
+ 
         await deleteDoc(recipeDocRef);
     
     
@@ -48,10 +48,12 @@ function Category() {
         console.error("Error deleting recipe: ", error);
       }
     }
+  }
   return (
     <div>
       <SideBar />
       <SwitchTab
+      
         className="SwitchTab"
         data={[
           "BreakFast",
