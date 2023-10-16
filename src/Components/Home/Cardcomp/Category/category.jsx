@@ -21,7 +21,7 @@ function Category() {
       setRecipe(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getRecipes();
-  }, [recCollectionRef]);
+  }, []);
   const onTabChange = (tab) => {
     setfilterCat(
       tab === "BreakFast"
