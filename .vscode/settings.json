@@ -1,5 +1,5 @@
 {
-    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: feat/delet-button-category]",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: feature/ConfirmationDialog]",
     "editor.acceptSuggestionOnEnter": "on",
     "conventionalCommits.scopes": [
         "categories",

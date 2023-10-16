@@ -6,13 +6,12 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./category.css";
 import SwitchTab from "../../../SwitchTab/SwitchTab";
+import ConfirmationDialog from "../../../ConfirmationDialog/ConfirmationDialog";
 function Category() {
   const [recipe, setRecipe] = useState([]);
-  console.log("🚀 ~ file: category.jsx:11 ~ Category ~ recipe:", recipe.id);
 
- 
   const [filterCat, setfilterCat] = useState("Break Fast");
-
+  const [isConfirmationOpen, setConfirmationOpen] = useState(false);
   const recCollectionRef = collection(db, "categories");
   useEffect(() => {
     const getRecipes = async () => {
@@ -31,29 +30,33 @@ function Category() {
         : tab
     );
   };
-
-
-    const handleDeleteRecipe= async(deleteRecipeId)=>{
-      const confirmDelete = window.confirm("Are you sure you want to delete this recipe?");
-      if (confirmDelete) {
+  const handleConfirm = () => {
+    // Perform the action you want to confirm here
+    console.log('Action confirmed');
+    setConfirmationOpen(false);
+  };
+  const handleDeleteRecipe = async (deleteRecipeId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this recipe?"
+    );
+    if (confirmDelete) {
       try {
-        
         const recipeDocRef = doc(db, "categories", deleteRecipeId);
- 
+
         await deleteDoc(recipeDocRef);
-    
-    
-        setRecipe((prevRecipe) => prevRecipe.filter((rec) => rec.id !== deleteRecipeId));
+
+        setRecipe((prevRecipe) =>
+          prevRecipe.filter((rec) => rec.id !== deleteRecipeId)
+        );
       } catch (error) {
         console.error("Error deleting recipe: ", error);
       }
     }
-  }
+  };
   return (
     <div>
       <SideBar />
       <SwitchTab
-      
         className="SwitchTab"
         data={[
           "BreakFast",
@@ -76,17 +79,25 @@ function Category() {
                   <div>
                     <div className="RecipeName">
                       <div className="RecipeNameTag">
-                      <h2 className="RecipeName_number">{i}</h2>
-                      <h2 className="RecipeName_name">{rec.RecipeName}</h2>
+                        <h2 className="RecipeName_number">{i}</h2>
+                        <h2 className="RecipeName_name">{rec.RecipeName}</h2>
                       </div>
-                      
+
                       <div>
-                        <button
+                      
+                        <div>
+                          <button onClick={() => setConfirmationOpen(true)}
                           className="delete-button"
-                          onClick={() => handleDeleteRecipe(rec.id)}
-                        >
-                          Delete
-                        </button>
+                          >
+                            Delete
+                          </button>
+                          <ConfirmationDialog
+                            isOpen={isConfirmationOpen}
+                            onClose={() => setConfirmationOpen(false)}
+                            onConfirm={handleConfirm}
+                            message="Are you sure you want to perform this action?"
+                          />
+                        </div>
                       </div>
                     </div>
 
@@ -142,3 +153,7 @@ function Category() {
 }
 
 export default Category;
+
+
+
+// onClick={() => handleDeleteRecipe(rec.id)}
