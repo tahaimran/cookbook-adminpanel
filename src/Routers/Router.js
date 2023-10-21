@@ -6,7 +6,7 @@ import Login from '../pages/Login/Login';
 
 import Category from '../pages/Categories/category';
 import Submit from '../pages/Suggestions/Submit';
-import Recipe from '../pages/AddRecipe/Recipe';
+import Recipe from '../pages/AddRecipe/recipe';
 
 
 
