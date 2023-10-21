@@ -7,9 +7,10 @@
 
 .submitBox{
     margin-top: 100px;
-    height: 400px;
+    height: 500px;
     width: 400px;
     display: flex;
+    gap: 10px;
     background-color:#F3EDDF ;
     flex-direction: column;
     padding: 20px;

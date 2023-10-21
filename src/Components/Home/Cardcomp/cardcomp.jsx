@@ -22,7 +22,7 @@ function Cardcomp() {
             height="100"
             viewBox="0 0 512 512"
             className="svg"
-            color="#cf4307"
+            // color="#cf4307"
           >
             <path
               fill="currentColor"
