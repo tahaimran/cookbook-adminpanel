@@ -1,18 +1,12 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom";
+
 import "./sidebar.css";
+import { Link } from "react-router-dom";
 export default function SideBar() {
   return (
     <div className="sideBar">
         <div className="sideBar_1">
-          <span className="sideText"> Cook Book Admin Panel</span>
+          <h1 className="cook_book"> Cook Book Admin Panel</h1>
         </div>
       <div className="sideBar_2">
               
@@ -23,7 +17,7 @@ export default function SideBar() {
           </span>
           <span >
             <Link to="/addRecipe" className="sideText">
-              Add New Recipe
+              Add Recipe
             </Link>
           </span>
           <span >
@@ -37,14 +31,14 @@ export default function SideBar() {
             </Link>
           </span>
 
-         
-      </div>
-      <div>
-      <Link to="/" className="sideTexts">
+          <div>
+             <Link to="/" className="sideTexts">
             <span>Logout </span> 
           </Link>
        
       </div>
+      </div>
+      
     </div>
   );
 }

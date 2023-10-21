@@ -1,0 +1,80 @@
+ .sideText {
+    background-color: #fffaeb;
+    text-decoration: none;
+    color: #130E01;
+
+    font-family: Poppins, ui-sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+
+}
+h1{
+    font-weight: 600;
+}
+.sideTexts span {
+
+
+    font-family: Poppins, ui-sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+
+
+
+
+}
+
+.sideBar {
+    background: #fffaeb;
+    margin: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(219, 219, 219);
+
+
+}
+
+
+.sideBar_2 {
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 17px;
+
+
+
+
+}
+
+.sideBar_1 {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: Poppins, ui-sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 500;
+}
+.sideTexts{
+    padding: 7px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border: 1px solid rgb(160, 151, 151);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #130E01;
+}
