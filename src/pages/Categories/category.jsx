@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import SideBar from "../../../SideBar/sidebar";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-import { db } from "../../../../Configuration/firebase";
+import { db } from "../../Configuration/firebase";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./category.css";
-import SwitchTab from "../../../SwitchTab/SwitchTab";
+import SwitchTab from "../../Layout/SwitchTab/SwitchTab";
+import SideBar from "../../Layout/SideBar/sidebar";
 function Category() {
   const [recipe, setRecipe] = useState([]);
- 
-
  
   const [filterCat, setfilterCat] = useState("Break Fast");
 
@@ -73,7 +71,7 @@ function Category() {
               .filter((rec) => rec.Category === `${filterCat}`)
               .map((rec, i) => {
                 return (
-                  <div>
+                  <div key={rec.id}>
                     <div className="RecipeName">
                       <div className="RecipeNameTag">
                       <h2 className="RecipeName_number">{i}</h2>

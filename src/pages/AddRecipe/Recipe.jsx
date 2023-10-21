@@ -1,15 +1,19 @@
 import TextField from "@mui/material/TextField";
 import "./recipe.css";
-import SideBar from "../../../SideBar/sidebar";
-import { Button, Paper, Typography } from "@mui/material";
+
+import { Button } from "@mui/material";
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../../../Configuration/firebase";
+
 import { uid } from "uid";
+
+import { db } from "../../Configuration/firebase";
+import SideBar from "../../Layout/SideBar/sidebar";
+
 
 function Recipe() {
   // Ingredients Adding

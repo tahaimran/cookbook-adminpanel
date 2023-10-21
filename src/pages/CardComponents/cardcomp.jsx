@@ -1,8 +1,6 @@
 import React from "react";
-import { Paper, Button, Typography } from "@mui/material";
 import "./cardcomp.css";
-import suggestionImg from "../../../Images/suggestionImg.jpg";
-import { recipe } from "./AddRecipeComp/recipe";
+
 import { Link, useNavigate } from "react-router-dom";
 
 function Cardcomp() {

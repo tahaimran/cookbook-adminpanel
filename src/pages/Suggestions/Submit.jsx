@@ -1,12 +1,13 @@
-import { Button, Paper, TextField, Typography } from "@mui/material";
+import {TextField} from "@mui/material";
 import React from "react";
 // import SideBar from "../../SideBar/sidebar";
 import { addDoc, collection } from "firebase/firestore";
 // import { db } from "../../../Configuration/firebase";
 import { useState } from "react";
 import "./submit.css";
-import SideBar from "../../../SideBar/sidebar";
-import { db } from "../../../../Configuration/firebase";
+
+import { db } from "../../Configuration/firebase";
+import SideBar from "../../Layout/SideBar/sidebar";
 function Submit() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
