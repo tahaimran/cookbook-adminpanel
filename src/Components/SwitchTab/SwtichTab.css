@@ -3,19 +3,21 @@
    width: 810px; 
    margin: auto; 
    max-width: 1200px;
-    
+   margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .tabItems {
-    margin-top: 20px;
+ 
     display: flex;
     align-items: center;
     height: 30px;
     position: relative;
     height: 34px;
-    background-color: #4C32B3;
-    border-radius: 5px;
+    background-color: #fae8d9;
+    border-radius: 40px;
     padding: 10px;
+    
 }
 
 
@@ -34,23 +36,34 @@
     cursor: pointer;
     transition: color ease 0.3s;
     font-size: 24px;
-    color: rgb(255, 255, 255);
-    font-weight: normal;
-    font-size: 20px;
-    font-family: inter, Arial, sans-serif;
-    font-weight: 500;
+    color: rgb(0, 0, 0);
     text-transform: capitalize;
     margin-left: 10px;
-    background-color: #4C32B3;
+    background-color: #fae8d9;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+  
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 }
 
 .active {
-    color: #4C32B3;
-    background-color: #fff;
-    border-radius:3px ;
+    color: #fff;
+    background-color: #CF4307;
+    border-radius:40px ;
+    font-size: 18px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 500;
    
 }
 
@@ -61,7 +74,7 @@
     margin-left: 3px;
     height: 30px;
     width: 99px;
-    border-radius: 15px;
+    border-radius: 40px;
     background-image: #000;
     position: absolute;
     left:0;

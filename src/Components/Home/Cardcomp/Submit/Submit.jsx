@@ -1,5 +1,4 @@
 import { Button, Paper, TextField, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 // import SideBar from "../../SideBar/sidebar";
 import { addDoc, collection } from "firebase/firestore";
@@ -26,49 +25,51 @@ function Submit() {
     setMessage("");
   };
   return (
-    <>
-      <SideBar/>
-      <Paper className="submitBox">
-        <Box>
-          <Typography variant="h4">Feel Free To Share New Ideas.</Typography>
-        </Box>
-        <Box>
-          <TextField
-            value={Name}
-            onChange={(e) => setName(e.target.value)}
-            id="outlined-basic"
-            label="Full Name"
-            variant="outlined"
-          />
-        </Box>
-        <Box>
-          <TextField
-            value={Email}
-            onChange={(e) => setEmail(e.target.value)}
-            id="outlined-basic"
-            label="Email Address"
-            variant="outlined"
-          />
-        </Box>
+    <div>
+      <SideBar />
+      <div className="main_box">
+        <div className="submitBox">
+          <div>
+            <h1 variant="h4">Feel Free To Share New Ideas</h1>
+          </div>
+          <div>
+            <TextField
+              value={Name}
+              onChange={(e) => setName(e.target.value)}
+              id="outlined-basic"
+              label="Full Name"
+              variant="outlined"
+            />
+          </div>
+          <div>
+            <TextField
+              value={Email}
+              onChange={(e) => setEmail(e.target.value)}
+              id="outlined-basic"
+              label="Email Address"
+              variant="outlined"
+            />
+          </div>
 
-        <Box>
-          <TextField
-            value={Message}
-            onChange={(e) => setMessage(e.target.value)}
-            id="outlined-multiline-static"
-            label="Suggestion"
-            multiline
-            rows={4}
-            sx={{ width: "400px" }}
-          />
-        </Box>
-        <Box>
-          <Button onClick={createSubmit} variant="contained">
-            Submit
-          </Button>
-        </Box>
-      </Paper>
-    </>
+          <div>
+            <TextField
+              value={Message}
+              onChange={(e) => setMessage(e.target.value)}
+              id="outlined-multiline-static"
+              label="Suggestion"
+              multiline
+              rows={4}
+              sx={{ width: "400px"  }}
+            />
+          </div>
+          <div>
+            <button className="button_submit" onClick={createSubmit} variant="contained">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

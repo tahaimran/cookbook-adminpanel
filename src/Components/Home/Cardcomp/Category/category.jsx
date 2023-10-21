@@ -8,7 +8,7 @@ import "./category.css";
 import SwitchTab from "../../../SwitchTab/SwitchTab";
 function Category() {
   const [recipe, setRecipe] = useState([]);
-  console.log("🚀 ~ file: category.jsx:11 ~ Category ~ recipe:", recipe.id);
+ 
 
  
   const [filterCat, setfilterCat] = useState("Break Fast");
@@ -21,7 +21,7 @@ function Category() {
       setRecipe(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getRecipes();
-  }, [recCollectionRef]);
+  }, []);
   const onTabChange = (tab) => {
     setfilterCat(
       tab === "BreakFast"

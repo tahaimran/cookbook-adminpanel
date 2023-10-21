@@ -1,27 +1,89 @@
-.cardCompMain{
+
+body{
+    background: #fffaeb;
+}
+.cardCompMain {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 3rem;
-    flex-wrap:wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+   
 }
-.main-paper{
-    width: 400px;
+
+.main_card {
+
+    width: 350px;
+    height: 350px;
     margin: 20px;
-    border: 1px solid white;
+
+    display: flex;
+    justify-content: center;
     border-radius: 10px;
+
 }
-.main-paper img{
-    width: 100%;
-    margin-bottom: 10px;
+
+.bottom-paper {
+    margin-top: 30px;
+    background-color: #FBE6CC;
 }
-.bottom-paper{
+
+.main-paper {
+    width: 400px;
+    width: 400px;
+    padding: 20px;
+    background-color: #FBE6CC;
+    border-radius: 30px;
+
+}
+
+.button_d{
+    justify-items: flex-end;
+    margin-left: 200px;
+    margin-top: 10px;
+    background-color: #E89452;
+ 
+    border: none;
+    color: black;
+    border-radius: 5px;
     padding: 10px;
+    width: 130px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+
+
+
+
+
 }
-.bottom-paper h4{
-    text-decoration: underline;
+.link_color{
+    background-color: #FBE6CC;
 }
-.bottom-paper button{
-    width: 120px;
-    margin: 20px auto;
+
+
+.svg {
+    background-color: #FBE6CC;
+
+
+}
+
+p {
+    background-color: #FBE6CC;
+
+
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 22px;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 
 }
