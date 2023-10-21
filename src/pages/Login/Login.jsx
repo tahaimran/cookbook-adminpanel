@@ -1,12 +1,10 @@
 import React from "react";
 import "./Login.css";
-import Card from "@mui/material/Card";
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import CookBookLogo from "../../assets/CookBookLogo.jpg"
 export default function Login() {
   const username = "undefinedtech";
   const password = "1234";
@@ -34,11 +32,15 @@ export default function Login() {
   };
   return (
     <div className="loginmain">
-      <Card className="mainDiv">
+      <div className="mainDiv">
+      <h1 className="Cook_Book">
+          Cook Book Admin
+          </h1>
         <div className="av-div">
-          <Avatar
+         
+          <img
             alt="Remy Sharp"
-            src="https://media.licdn.com/dms/image/C560BAQFcGZ0J5P2_VA/company-logo_200_200/0/1677789295837?e=1687996800&v=beta&t=HCqcy3yQdD2rUgI40S-QLhs_MEXcxVhOS2aVmF24b64"
+             src={CookBookLogo}
             className="icon"
           />
         </div>
@@ -69,7 +71,7 @@ export default function Login() {
               Login
             </button>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }

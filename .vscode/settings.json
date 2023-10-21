@@ -1,9 +1,17 @@
 {
+<<<<<<< HEAD
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: styleRefactor]",
+=======
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: styleRefactor-login]",
+>>>>>>> styleRefactor-login
     "editor.acceptSuggestionOnEnter": "on",
     "conventionalCommits.scopes": [
         "categories",
         "addRecipe",
+<<<<<<< HEAD
         "Src"
+=======
+        "src"
+>>>>>>> styleRefactor-login
     ]
 }
