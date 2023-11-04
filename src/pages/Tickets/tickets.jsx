@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from "react";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { db } from "../../Configuration/firebase";
+import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
+import "./Tickets.css";
+import SwitchTab from "../../Layout/SwitchTab/SwitchTab";
+import SideBar from "../../Layout/SideBar/sidebar";
+import { useNavigate } from 'react-router-dom';
+import { MdDelete } from 'react-icons/md';
+import {FiEdit } from 'react-icons/fi';
+function Tickets() {
+
+  const [tickets, setTickets] = useState([]);
+  const recCollectionRef = collection(db, "tickets");
+  useEffect(() => {
+    const getRecipes = async () => {
+      const data = await getDocs(recCollectionRef);
+      setTickets(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getRecipes();
+  }, []);
+
+  return (
+    <div>
+      <SideBar />
+      
+      <div>
+        <Box className="tickets">
+            <h1 className="tickets_header">Tickets</h1>
+          <Box>
+            {tickets.map((tickets, i) => {
+                return (
+                  <div key={tickets.id} className="tickets_box">
+                    <span >Name:
+                        <h1>{tickets.Name}</h1>
+                    </span>
+                    <span >Email :
+                        <h1>{tickets.Email}</h1>
+                    </span>
+                    <span >Message:
+                        <h1>{tickets.Message}</h1>
+                    </span>
+                 
+                   
+                  </div>
+                );
+              })}
+          </Box>
+        </Box>
+      </div>
+    </div>
+  );
+}
+
+export default Tickets;
