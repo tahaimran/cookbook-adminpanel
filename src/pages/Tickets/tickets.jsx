@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { collection,  getDocs } from "firebase/firestore";
 import { db } from "../../Configuration/firebase";
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
 import "./Tickets.css";
-import SwitchTab from "../../Layout/SwitchTab/SwitchTab";
 import SideBar from "../../Layout/SideBar/sidebar";
-import { useNavigate } from 'react-router-dom';
-import { MdDelete } from 'react-icons/md';
-import {FiEdit } from 'react-icons/fi';
+
 function Tickets() {
 
   const [tickets, setTickets] = useState([]);
