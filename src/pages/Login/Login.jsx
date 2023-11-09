@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import Avatar from "@mui/material/Avatar";
+
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

@@ -138,7 +138,7 @@ function Recipe() {
               const { Ingredient, Quantity } = data;
 
               return (
-                <div sx={{ marginTop: "px" }}>
+                <div sx={{ marginTop: "1px" }}>
                   <TextField
                     required
                     size="small"
@@ -150,7 +150,7 @@ function Recipe() {
                   />
 
                   <TextField
-                    sx={{ marginLeft: "0px" }}
+                    sx={{ marginLeft: "10px" }}
                     required
                     id={i}
                     size="small"
@@ -161,10 +161,12 @@ function Recipe() {
                   />
 
                   <Button
+                   sx={{ marginLeft: "10px" }}
+
                     variant="contained"
                     size="medium"
                     label="Quantity"
-                    color="success"
+                    
                     onClick={() => handleIngDelete(i)}
                   >
                     <svg

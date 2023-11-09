@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 import "./category.css";
 import SwitchTab from "../../Layout/SwitchTab/SwitchTab";
 import SideBar from "../../Layout/SideBar/sidebar";
+import { useNavigate } from 'react-router-dom';
+import { MdDelete } from 'react-icons/md';
+import {FiEdit } from 'react-icons/fi';
 function Category() {
+  const history = useNavigate()
+
   const [recipe, setRecipe] = useState([]);
  
   const [filterCat, setfilterCat] = useState("Break Fast");
@@ -37,16 +42,20 @@ function Category() {
       try {
         
         const recipeDocRef = doc(db, "categories", deleteRecipeId);
- 
         await deleteDoc(recipeDocRef);
-    
-    
         setRecipe((prevRecipe) => prevRecipe.filter((rec) => rec.id !== deleteRecipeId));
       } catch (error) {
         console.error("Error deleting recipe: ", error);
       }
     }
   }
+  const handleEditRecipe = (recipeId) => {
+  
+    
+  
+    history(`/edit-recipe/${recipeId}`);
+  };
+
   return (
     <div>
       <SideBar />
@@ -79,11 +88,19 @@ function Category() {
                       </div>
                       
                       <div>
+                       
+                        <button
+                          className="delete-button"
+                          onClick={() => handleEditRecipe(rec.id)}
+                        >
+                          <FiEdit size={25}/>
+                        </button>
                         <button
                           className="delete-button"
                           onClick={() => handleDeleteRecipe(rec.id)}
                         >
-                          Delete
+                        <MdDelete size={25
+                        }/>
                         </button>
                       </div>
                     </div>
