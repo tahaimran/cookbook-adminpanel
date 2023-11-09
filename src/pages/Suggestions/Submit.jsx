@@ -8,6 +8,7 @@ import "./submit.css";
 
 import { db } from "../../Configuration/firebase";
 import SideBar from "../../Layout/SideBar/sidebar";
+import Tickets from "../tickets/tickets";
 function Submit() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -28,7 +29,9 @@ function Submit() {
   return (
     <div>
       <SideBar />
+
       <div className="main_box">
+
         <div className="submitBox">
           <div>
             <h1 variant="h4">Feel Free To Share New Ideas</h1>
@@ -70,6 +73,7 @@ function Submit() {
           </div>
         </div>
       </div>
+      <Tickets/>
     </div>
   );
 }

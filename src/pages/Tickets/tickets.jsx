@@ -19,7 +19,7 @@ function Tickets() {
 
   return (
     <div>
-      <SideBar />
+     
       
       <div>
         <Box className="tickets">
