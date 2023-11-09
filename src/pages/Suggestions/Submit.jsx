@@ -8,7 +8,7 @@ import "./submit.css";
 
 import { db } from "../../Configuration/firebase";
 import SideBar from "../../Layout/SideBar/sidebar";
-import Tickets from "../tickets/tickets";
+import Tickets from "../Tickets/tickets";
 function Submit() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -63,7 +63,7 @@ function Submit() {
               label="Suggestion"
               multiline
               rows={4}
-              sx={{ width: "400px"  }}
+              sx={{ width: "400px"  }}s
             />
           </div>
           <div>
@@ -73,7 +73,10 @@ function Submit() {
           </div>
         </div>
       </div>
+      <div>
       <Tickets/>
+
+      </div>
     </div>
   );
 }

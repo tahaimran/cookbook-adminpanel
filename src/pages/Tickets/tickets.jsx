@@ -3,7 +3,7 @@ import { collection,  getDocs } from "firebase/firestore";
 import { db } from "../../Configuration/firebase";
 import { Box } from "@mui/material";
 import "./Tickets.css";
-import SideBar from "../../Layout/SideBar/sidebar";
+
 
 function Tickets() {
 
