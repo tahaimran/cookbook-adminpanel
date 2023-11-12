@@ -21,7 +21,7 @@ function Tickets() {
     <div>
       <SideBar />
       
-      <div>
+      <div className="main">
         <Box className="tickets">
             <h1 className="tickets_header">Tickets</h1>
           <Box>
