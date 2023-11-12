@@ -30,13 +30,7 @@ export default function SideBar() {
               Suggestions
             </Link>
           </span>
-          <span >
-            <Link to="/tickets" className="sideText">
-            Tickets
-            </Link>
-          </span>
-
-
+    
           <div>
              <Link to="/" className="sideTexts">
             <span>Logout </span> 
