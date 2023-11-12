@@ -7,8 +7,6 @@ import Category from '../pages/Categories/category';
 import Submit from '../pages/Suggestions/Submit';
 import Recipe from '../pages/AddRecipe/recipe';
 import EditRecipe from '../Layout/EditRecipe/EditRecipe';
-import Tickets from '../pages/Tickets/tickets';
-
 function AppRouter() {
   return (
     <Router>
@@ -18,8 +16,7 @@ function AppRouter() {
         <Route path="/addRecipe" element={<Recipe />} />
         <Route path="/submit" element={<Submit />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/tickets" element={<Tickets/>} />
-
+      
         <Route path="/edit-recipe/:recipeId" element={<EditRecipe />} />
       </Routes>
     </Router>

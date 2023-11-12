@@ -99,8 +99,7 @@ function Category() {
                           className="delete-button"
                           onClick={() => handleDeleteRecipe(rec.id)}
                         >
-                        <MdDelete size={25
-                        }/>
+                        <MdDelete size={25}/>
                         </button>
                       </div>
                     </div>

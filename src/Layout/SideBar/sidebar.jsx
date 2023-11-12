@@ -30,7 +30,11 @@ export default function SideBar() {
               Suggestions
             </Link>
           </span>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> parent of d9cf8d4 (feat(tickets): :sparkles: Add tickets page from tickets collections)
           <div>
              <Link to="/" className="sideTexts">
             <span>Logout </span> 
