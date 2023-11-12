@@ -5,7 +5,7 @@ import Home from '../pages/Home/home';
 import Login from '../pages/Login/Login';
 import Category from '../pages/Categories/category';
 import Submit from '../pages/Suggestions/Submit';
-import Recipe from '../pages/AddRecipe/recipe';
+import Recipe from '../pages/AddRecipe/Recipe';
 import EditRecipe from '../Layout/EditRecipe/EditRecipe';
 import Tickets from '../pages/Tickets/tickets';
 
