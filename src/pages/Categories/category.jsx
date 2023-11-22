@@ -105,7 +105,7 @@ function Category() {
                       </div>
                     </div>
 
-                    <div className="main">
+                    <div className="main2">
                       <ol className="main_list">
                         {rec.Ingredient.map((recs, i) => {
                           return <li>{recs}</li>;
