@@ -6,7 +6,7 @@ export default function SideBar() {
   return (
     <div className="sideBar">
         <div className="sideBar_1">
-          <span className="sideText"> Cook Book Admin Panel</span>
+          <h1 className="cook_book"> Cook Book Admin Panel</h1>
         </div>
       <div className="sideBar_2">
               
@@ -17,7 +17,7 @@ export default function SideBar() {
           </span>
           <span >
             <Link to="/addRecipe" className="sideText">
-              Add New Recipe
+              Add Recipe
             </Link>
           </span>
           <span >
@@ -30,15 +30,15 @@ export default function SideBar() {
               Suggestions
             </Link>
           </span>
-
-         
-      </div>
-      <div>
-      <Link to="/" className="sideTexts">
+    
+          <div>
+             <Link to="/" className="sideTexts">
             <span>Logout </span> 
           </Link>
        
       </div>
+      </div>
+      
     </div>
   );
 }

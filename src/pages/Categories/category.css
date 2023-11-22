@@ -30,7 +30,7 @@ border-radius: 10px;
     font-weight: 500;
     text-decoration: none;
     padding: 4px;
-    background-color: #4C32B3;
+    background-color:#FAE8D9;
 }
 
 .RecipeName {
@@ -40,7 +40,7 @@ border-radius: 10px;
     height: 50px;
     max-width: 1200px;
     justify-content: space-between;
-    background-color: #0C0129;
+    background-color: #FBE6CC;
     color: #ffffff;
     border-radius: 15px 15px 0px 0px;
 }
@@ -51,7 +51,7 @@ border-radius: 10px;
     height: 50px;
     max-width: 1200px;
    
-    background-color: #0C0129;
+    background-color: #FBE6CC;
     color: #ffffff;
     border-radius: 15px 15px 0px 0px;
 }
@@ -61,7 +61,7 @@ border-radius: 10px;
     font-weight: 600;
     text-transform: capitalize;
     margin-left: 10px;
-    background-color: #4C32B3;
+    background-color: #cf4307;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -76,27 +76,40 @@ border-radius: 10px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #4C32B3;
-    ;
-    background-color: #ffffff;
+    color:#CF4307;
+    border: none;
+   
+    font-family: Poppins, sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 600;
+
 }
 .delete-button{
-    
-    font-size: 15px;
-    font-family: inter, Arial, sans-serif;
-    font-weight: 500;
-    text-transform: capitalize;
-    margin-right: 55px;
-    background-color: #FFFFFF;
-    color:#4C32B3;
-    padding: 7px;
-    padding-left: 15px;
-    padding-right: 15px;
+    background-color: #CF4307;
+    margin-top: 10px;
+    margin-right: 30px;
+    border: none;
+    color: rgb(255, 255, 255);
     border-radius: 5px;
+    padding: 4px;
+    width: 40px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 }
 
-.main {
-    background-color: #0C0129;
+.main2 {
+    background-color: #FBE6CC;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -107,15 +120,22 @@ border-radius: 10px;
 
 .main_list {
     margin-left: 30px;
-    color: #ffffff;
+    color: #000000;
     align-self: flex-start;
     margin-top: 30px;
 }
 
 .main_list li {
   
+    font-family: Poppins, sans-serif;
     font-size: 16px;
-    font-family: inter, Arial, sans-serif;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+
     line-height: 1.1;
     margin-bottom: 10px;
     text-align: justify;
@@ -147,7 +167,7 @@ border-radius: 10px;
 
 .Box_2 {
     margin: 20px;
-    background-color: #ffffff;
+    background-color: #E89452;
     height: inherit;
     width: 500px;
     border-radius: 10px;
@@ -159,15 +179,15 @@ border-radius: 10px;
 }
 
 .text {
-    font-size: 14px;
-
-    font-family: inter, Arial, sans-serif;
-
-    color: #000000;
-    font-weight: 500;
-    text-align: justify;
-    text-decoration: none;
-
+  
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
 }
 
 .Box_div_one {
@@ -177,23 +197,20 @@ border-radius: 10px;
 }
 
 .button {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    /* height: 70px; */
-    border-radius: 30px;
-    color: #ffffff;
+    background-color: #cf4307;
+    margin-top: 10px;
+    margin-right: 30px;
     border: none;
-    background-color: #6C47FF;
-    
-    font-size: 15px;
-    font-family: inter, Arial, sans-serif;
-    line-height: 1.1;
-
-    text-align: justify;
-    font-weight: 600;
-    text-decoration: none;
-
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+    width: 130px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 500;
 }

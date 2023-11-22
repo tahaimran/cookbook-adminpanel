@@ -1,0 +1,89 @@
+
+body{
+    background: #fffaeb;
+}
+.cardCompMain {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+
+.main_card {
+
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+
+.bottom-paper {
+    margin-top: 30px;
+    background-color: #FBE6CC;
+}
+
+.main-paper {
+    width: 400px;
+    width: 400px;
+    padding: 20px;
+    background-color: #FBE6CC;
+    border-radius: 30px;
+
+}
+
+.button_d{
+    justify-items: flex-end;
+    margin-left: 200px;
+    margin-top: 10px;
+    background-color: #E89452;
+ 
+    border: none;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 130px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+
+
+
+
+
+}
+.link_color{
+    background-color: #FBE6CC;
+}
+
+
+.svg {
+    background-color: #FBE6CC;
+
+
+}
+
+p {
+    background-color: #FBE6CC;
+
+
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 22px;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+
+}
